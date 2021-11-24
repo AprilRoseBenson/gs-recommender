@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="background-pict">
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Welcome! </ion-card-title>
+        <ion-card-subtitle>Time to shop! Let's Sign in</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list lines = "full">
+        <ion-item>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input type="email" value="" [(ngModel)]="data.EmailAddress"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" value="" [(ngModel)]="data.Password"></ion-input>
+        </ion-item>
+        <ion-card-subtitle><a (click)="forgot()">Forgot Password?</a></ion-card-subtitle>
+        <ion-button  shape="block" (click)="Login()">Sign In</ion-button>
+        <ion-card-subtitle>Don't have an account yet? <a (click)="register()">Sign Up</a></ion-card-subtitle>
+      </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back" style="zoom:1.0;"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+      <ion-searchbar animated (ionChange)="search($event)"></ion-searchbar>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+ <ion-list>
+   <ion-item (click)="storePage(stores.id,stores.StoreName,stores.StoreAddress,stores.Image,stores.ContactNo,stores.OpenHours,stores.maximum_cust)" *ngFor="let stores of store">
+    
+   
+    
+    <ion-label>
+   
+    <h2>{{stores.StoreName}}</h2>
+    <h5>{{stores.StoreAddress}}</h5>
+  </ion-label>
+
+
+
+  <ion-row>
+    <ion-label *ngIf="stores.customer < stores.maximum_cust/2"align="right" color="success" ><br><h2>Safe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></ion-label>
+    <ion-progress-bar *ngIf="stores.customer < stores.maximum_cust/2"style=" height: 10px;" color="success" [value]="stores.customer/stores.maximum_cust"  > </ion-progress-bar><br>
+  </ion-row>
+  <ion-row>
+    <ion-label *ngIf="stores.customer >= stores.maximum_cust/2  && stores.customer <stores.maximum_cust/1.25"align="right" color="warning" ><br><h2>Moderate</h2></ion-label>
+    <ion-progress-bar  *ngIf="stores.customer >= stores.maximum_cust/2  && stores.customer <stores.maximum_cust/1.25" style=" height: 10px;" color="warning" [value]="stores.customer/stores.maximum_cust"  > </ion-progress-bar><br>
+  </ion-row>
+  <ion-row>
+  <ion-label *ngIf="stores.customer >=stores.maximum_cust/1.25"align="right" color="danger" ><br><h2>High Risk</h2></ion-label>
+  <ion-progress-bar  *ngIf="stores.customer >=stores.maximum_cust/1.25"style=" height: 10px;" color="danger" [value]="stores.customer/stores.maximum_cust"  > </ion-progress-bar>
+</ion-row>
+  
+ 
+
+   </ion-item>
+ </ion-list>
+</ion-content>
+
+
+
+<ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="secondary">
+
+    <ion-tab-button (click)="homepagePage()" >
+      <ion-icon name="home" style="zoom:1.0;"color="light"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="suggestedPage()">
+      <ion-icon name="cart" style="zoom:1.0;"></ion-icon>
+      <ion-label>Recommended</ion-label>
+    </ion-tab-button>
+   
+
+    <ion-tab-button (click)="recentsPage()">
+      <ion-icon name="time" style="zoom:1.0;"></ion-icon>
+      <ion-label>Recents</ion-label>
+    </ion-tab-button>
+
+    
+
+    <ion-tab-button (click)="profilePage()">
+      <ion-icon name="person" style="zoom:1.0;"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+  
+</ion-tabs>
+</ion-toolbar>

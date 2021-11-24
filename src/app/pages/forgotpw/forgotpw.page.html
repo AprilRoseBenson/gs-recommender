@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-pict">
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Forgot Password</ion-card-title>
+        <ion-card-subtitle>Enter your email address to reset</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content> 
+        <ion-list lines = "full">
+        <ion-item >
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input [(ngModel)] = "data.EmailAddress" type="email"></ion-input>
+        </ion-item>
+      </ion-list> 
+        <ion-button type ="button" (click)="CheckGmail()" 
+                color="primary" shape="block" expand="block">
+                Continue
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
+</ion-content>

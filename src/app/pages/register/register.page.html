@@ -1,0 +1,70 @@
+<ion-content>
+ 
+   
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Create Account</ion-card-title>
+        <ion-card-subtitle>Kindly fill up this form to be officially registered</ion-card-subtitle>
+      </ion-card-header>
+
+    <ion-card-content>
+    <ion-list lines = "full">
+    <ion-item>
+      <ion-label position ="floating">Full Name</ion-label>
+      <ion-input [(ngModel)] = "CustomerName" type = "text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position ="floating">Full Address</ion-label>
+      <ion-input [(ngModel)] = "CustomerAddress" type = "text"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+    <ion-item>
+   
+      
+      <ion-label position ="floating">Age</ion-label>
+      <ion-input [(ngModel)] = "Age" type = "text"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+    
+      <ion-label position ="floating">Gender</ion-label>
+      <ion-select [(ngModel)]="Gender" placeholder="Choose One">
+      <ion-select-option value = "Female">Female</ion-select-option>
+      <ion-select-option value = "Male">Male</ion-select-option>
+      <ion-select-option value = "I prefer not to say">I prefer not to say</ion-select-option>
+    </ion-select>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label position ="floating">Contact No.</ion-label>
+      <ion-input [(ngModel)] = "ContactNo" type = "text"></ion-input>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+
+    <ion-item>
+      <ion-label position ="floating">Username</ion-label>
+      <ion-input [(ngModel)] = "Username" type = "text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position ="floating">Email Address</ion-label>
+      <ion-input [(ngModel)] = "EmailAddress" type = "text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position ="floating">Password</ion-label>
+      <ion-input [(ngModel)] = "Password" type = "password"></ion-input>
+    </ion-item>
+    <ion-card-subtitle><ion-checkbox (ionChange)="TermsandCondtions()"></ion-checkbox>&nbsp;Check here to indicate that you agree to our <a (click)="tp()">Terms</a>
+      and that you have read our <a (click)="dp()">Data Policy</a>.
+    </ion-card-subtitle>
+    <ion-button [disabled]="!isTermsAccepted" shape="block" type ="button" (click)="AddAccount()" >SIGN UP</ion-button>
+    <ion-card-subtitle>Already have an account ? <a (click)="login()">Sign In</a></ion-card-subtitle>
+  </ion-list>
+  </ion-card-content>
+  </ion-card>
+  
+ 
+</ion-content>

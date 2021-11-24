@@ -1,0 +1,62 @@
+ion-content{
+    margin-top: 100px;
+    --ion-background-color: #fff;
+}
+
+.background-container{
+
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: url('http://localhost/grocery-app/images/home_screen.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+ion-card{
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+
+
+ion-card-title{
+    margin-top: 1000px;
+    font-size: 20px;
+    color: #239b47;
+    font-weight: 400;
+}
+
+ion-card-content{
+    margin-top: 200px;
+    
+    ion-button{
+        width: 200px;
+        height: 50px;
+        --border-radius: 10px;
+        --background: #3c91c9;
+        color:#fff;
+        font-weight:400;
+        text-transform: none;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    }
+}
+
+@media screen and (min-width:500px){
+    .background-filter{
+        height: 100%;
+        width: 100%;
+        background: rgba(235, 228, 198, 0.9);
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,87 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<ion-header>
+<ion-toolbar color="secondary">
+  <ion-buttons slot="start">
+    <ion-button (click)="discardAlert()">
+      <ion-icon name="arrow-back" style="zoom:1.0;"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="TP()" class="edit">Terms & Policies</ion-button>
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content full-screen>
+<div class="background-pict">
+ 
+    <ion-card>
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar slot="bottom" >    
+            <ion-tab-button class="profile" (click)="editProfile()">
+              <ion-label class="profile">Profie</ion-label>
+            </ion-tab-button>
+      
+            <ion-tab-button class="password" (click)="editPassword()">
+              <ion-label class="password">Password</ion-label>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-toolbar>
+      <ion-card-header>
+        <ion-card-title><b>User Profile</b></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      <ion-list lines="full">
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="stacked"><b>Full Name</b></ion-label>
+              <ion-input [(ngModel)]="CustomerName" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="stacked"><b>Address</b></ion-label>
+              <ion-input [(ngModel)]="CustomerAddress" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked"><b>Age</b></ion-label>
+                <ion-input [(ngModel)]="Age" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked"><b>Gender</b></ion-label>
+                <ion-input [(ngModel)]="Gender" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked"><b>Contact No.</b></ion-label>
+                <ion-input [(ngModel)]="ContactNo" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button type="button" (click)="updateProfile()" color="primary">
+              Save Changes
+            </ion-button>
+          </ion-col>
+        </ion-row>    
+      </ion-list>      
+      </ion-card-content>
+    </ion-card>
+  </div>
+ 
+</ion-content>

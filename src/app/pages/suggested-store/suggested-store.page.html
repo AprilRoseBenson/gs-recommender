@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+    <ion-title>Recommended Store</ion-title>
+  </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out" style="zoom:1.0;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row lines="none" *ngFor="let item of dataitem">
+    <ion-col>
+      <ion-card>
+      <ion-card-header (click)="storePage(item.StoreID,item.StoreName,item.StoreAddress,item.Image,item.ContactNo,item.OpenHours,item.maximum_cust)">
+        <ion-card-subtitle>Grocery Store</ion-card-subtitle>
+        <ion-item lines="none" >
+          <h1>{{item.StoreName}}</h1>
+       
+        
+        </ion-item><br>
+        <ion-row> 
+        <ion-icon color="dark" name="location-outline" style="zoom:2.5;"></ion-icon>&nbsp;&nbsp;
+        <ion-label color="dark"><br>  {{item.StoreAddress}}</ion-label>
+        </ion-row><br>
+        <ion-row> 
+          <ion-icon color="dark" name="time-outline" style="zoom:2.5;"></ion-icon>&nbsp;&nbsp;
+          <ion-label color="dark"><br>  {{item.OpenHours}}</ion-label>
+          </ion-row><br>
+        <ion-row> 
+            <ion-icon  align="center" color="tertiary" name="people-outline" style="zoom:2.0;margin-left:5vh;margin-top:0.6vh;"></ion-icon>&nbsp;&nbsp;
+           <ion-label align="center" color="dark"><br><h2><b> Occupancy Right Now</b></h2></ion-label>  
+        </ion-row>
+        <ion-row> 
+          <ion-progress-bar *ngIf="item.customer < item.maximum_cust/2"style=" height: 30px;" color="success" [value]="item.customer/item.maximum_cust"  > </ion-progress-bar><br>
+          <ion-progress-bar  *ngIf="item.customer >= item.maximum_cust/2  && item.customer < item.maximum_cust/1.25" style=" height: 30px;" color="warning" [value]="item.customer/item.maximum_cust"  > </ion-progress-bar><br>
+          <ion-progress-bar *ngIf="item.customer >= item.maximum_cust/1.25"style=" height: 30px;" color="danger" [value]="item.customer/item.maximum_cust"  > </ion-progress-bar>
+        </ion-row>
+        <ion-row> 
+          
+          <ion-col>
+           
+          <ion-label  align="left" color="tertiary"><br><h1 >{{item.customer}}</h1></ion-label>
+        </ion-col>
+       
+          <ion-label *ngIf="item.customer < item.maximum_cust/2"align="right" color="success" ><br><h1>Safe</h1></ion-label>
+          <ion-label *ngIf="item.customer >= item.maximum_cust/2  && item.customer < item.maximum_cust/1.25"align="right" color="warning" ><br><h1>Moderate</h1></ion-label>
+          <ion-label *ngIf="item.customer >= item.maximum_cust/1.25"align="right" color="danger" ><br><h1>High Risk</h1></ion-label>
+       
+        <ion-col>
+          <ion-label align="right" color="tertiary" ><br><h1> {{item.maximum_cust}}</h1></ion-label>
+        </ion-col>
+        </ion-row>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+
+<ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="secondary">
+
+    <ion-tab-button (click)="homepagePage()" >
+      <ion-icon name="home" style="zoom:1.0;"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="suggestedPage()">
+      <ion-icon name="cart" style="zoom:1.0;"color="light"></ion-icon>
+      <ion-label>Recommended</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="recentsPage()">
+      <ion-icon name="time" style="zoom:1.0;"></ion-icon>
+      <ion-label>Recents</ion-label>
+    </ion-tab-button>
+
+ 
+
+    <ion-tab-button (click)="profilePage()">
+      <ion-icon name="person" style="zoom:1.0;"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+  
+</ion-tabs>
+</ion-toolbar>
