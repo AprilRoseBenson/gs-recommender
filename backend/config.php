@@ -6,4 +6,4 @@
     header('Access-Control-Max-Age: 1728000');
     header('Content-Length: 0');
     header('Content-Type: text/plain');
-    $con=mysqli_connect("localhost", "root", "", "gs-ra") or die("could not connect DB");
+    $con=mysqli_connect("127.0.0.1", "root", "", "gsra") or die("could not connect DB");
