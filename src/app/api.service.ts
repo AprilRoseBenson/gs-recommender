@@ -8,7 +8,7 @@ export class ApiService {
   constructor(public http:HttpClient) { }
 
 getAccount(AccountID){
-  return this.http.get('http://127.0.0.1:3306/grocery-app/backend/getSingleAccount.php?AccountID='+AccountID);
+  return this.http.get('http://192.241.145.200:80/grocery-app/backend/getSingleAccount.php?AccountID='+AccountID);
 }
 Reset(AccountID,data){
   return this.http.put('http://localhost/grocery-app/backend/updateAccount.php?AccountID='+AccountID,data);
