@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
     if(this.data.EmailAddress !=='' && this.data.Password !==''){
       console.log('Email: ',this.data.EmailAddress)
       console.log('Password: ',this.data.Password)
-      let url:string='http://192.241.145.200/grocery-app/backend/login.php';
+      let url:string='http://localhost/grocery-app/backend/login.php';
       let dataPost= JSON.stringify({
                 email:this.data.EmailAddress,
                 pass:this.data.Password
